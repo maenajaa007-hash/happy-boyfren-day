@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Happy BoyFriend's Day ⚓</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;font-family:Georgia,'Palatino Linotype',serif;color:#3b2412;-webkit-tap-highlight-color:transparent}
+.sea{position:fixed;inset:0;background:linear-gradient(#0c2340,#145a86 65%,#1b78a8);z-index:-1}
+.sea::after{content:'';position:absolute;left:0;right:0;bottom:0;height:35%;background:radial-gradient(circle at 30px 0,transparent 24px,rgba(255,255,255,.13) 25px,transparent 28px) 0 0/60px 26px repeat;animation:wv 8s linear infinite}
+@keyframes wv{to{background-position:60px 0}}
+.pm{background:radial-gradient(ellipse at center,#f8ecc9,#e6cd97);border:3px solid #6b4a2b;border-radius:12px;box-shadow:inset 0 0 40px rgba(120,70,20,.35),0 12px 30px #0007}
+.page{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:52px 12px 84px;opacity:0;visibility:hidden;transform:scale(1.04);transition:opacity .6s,transform .6s,visibility .6s}
+.page.on{opacity:1;visibility:visible;transform:none}
+#prog{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:#0c2340cc;color:#f3d27a;padding:4px 14px;border-radius:99px;font-size:.85rem;letter-spacing:2px;z-index:6;border:1px solid #c99a2e}
+.btn{font:700 1rem Georgia,serif;min-height:48px;min-width:120px;padding:0 22px;border:2px solid #3b2412;border-radius:99px;background:linear-gradient(#f6d985,#c99a2e);color:#3b2412;cursor:pointer;box-shadow:0 4px 0 #6b4a2b;white-space:nowrap}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #6b4a2b}
+.btn.red{background:linear-gradient(#c75a5a,#8e2f2f);color:#fff}
+h1,h2{margin:.2em 0;font-variant:small-caps}
+h1{font-size:clamp(1.4rem,5.5vw,2.2rem)}h2{font-size:clamp(1.3rem,4.5vw,1.9rem)}
+/* login */
+.card{width:min(92vw,400px);padding:22px 20px;text-align:center;position:relative;z-index:2}
+.card p{margin:.4em 0;font-style:italic}
+#code{width:100%;height:50px;margin:12px 0;border:2px solid #6b4a2b;border-radius:8px;background:#fffaf0;font:1.3rem Georgia;text-align:center;letter-spacing:.3em;color:#3b2412}
+#mb{color:#9b3a3a;min-height:1.4em;font-weight:700;font-style:normal}
+.hint{color:#145a86;font-size:.9rem}
+.bad{animation:bad .95s}
+@keyframes bad{0%{transform:none}8%,24%,40%{transform:translateX(-12px) rotate(-1deg)}16%,32%{transform:translateX(12px) rotate(1deg)}55%{opacity:0;transform:scale(.88) rotate(-3deg)}100%{opacity:1;transform:none}}
+.compass{position:relative;width:76px;height:76px;margin:0 auto 8px;border-radius:50%;border:4px solid #8a6a22;background:radial-gradient(#fff6dc,#e2c98f);box-shadow:inset 0 0 8px #0005}
+.compass b{position:absolute;top:1px;left:50%;margin-left:-5px;font-size:.7rem;color:#6b4a2b}
+.nw{position:absolute;inset:0;animation:sw 4s ease-in-out infinite}
+@keyframes sw{0%,100%{transform:rotate(-25deg)}50%{transform:rotate(30deg)}}
+.nd{position:absolute;left:50%;top:14px;margin-left:-7px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:24px solid #9b3a3a}
+.nd::after{content:'';position:absolute;left:-7px;top:24px;border-left:7px solid transparent;border-right:7px solid transparent;border-top:24px solid #2a4a6b}
+.ship{position:absolute;bottom:5%;font-size:2.4rem;animation:sail 18s linear infinite;pointer-events:none}
+@keyframes sail{from{left:-12%}to{left:108%}}
+/* story */
+.frame{position:relative;width:min(100%,900px);min-height:min(68dvh,540px);max-height:100%;overflow:auto;padding:14px 14px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;gap:10px}
+.ribbon{background:#9b3a3a;color:#fbe9bd;padding:3px 16px;border-radius:4px;font-size:.8rem;letter-spacing:2px}
+.tip{position:absolute;bottom:10px;left:0;right:0;font-style:italic;opacity:.75;animation:pu 1.6s infinite}
+@keyframes pu{50%{opacity:.25}}
+.shots{display:flex;gap:10px;width:100%;justify-content:center}
+.shot{flex:1;max-width:240px;background:#fffaf0;padding:5px 5px 14px;box-shadow:0 6px 12px #0005;transform:rotate(var(--r))}
+.shot .ph{aspect-ratio:3/4;width:100%}
+#msg{margin:0;font-size:clamp(1rem,3.6vw,1.25rem);font-style:italic;white-space:pre-line;max-width:640px}
+.stamp{border:3px double #9b3a3a;color:#9b3a3a;padding:4px 12px;font-weight:700;letter-spacing:2px;transform:rotate(-4deg);border-radius:6px;font-size:.85rem}
+.st{transition:opacity .7s,transform .7s cubic-bezier(.2,1.4,.4,1)}
+.hid{opacity:0;transform:scale(.7) translateY(16px)}
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#dcc48f,#b98f55);display:flex;align-items:center;justify-content:center}
+.ph::before{content:'📷';font-size:1.6rem;opacity:.55}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* wall */
+.ttl{color:#fbe9bd;text-shadow:0 2px 6px #000a;margin:0 0 8px}
+#wall{width:min(100%,1000px);flex:1;min-height:0;overflow-y:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:6px 18px;padding:10px 12px 20px;align-content:start}
+@media(min-width:700px){#wall{grid-template-columns:repeat(5,1fr)}}
+.cell{position:relative;padding-top:14px}
+.cell::before{content:'';position:absolute;top:6px;left:-9px;right:-9px;height:3px;border-radius:3px;background:repeating-linear-gradient(90deg,#7a5230 0 6px,#a47845 6px 9px);box-shadow:0 2px 2px #0004}
+.pol{display:block;position:relative;width:100%;border:0;background:#fffaf0;padding:7px 7px 6px;box-shadow:0 6px 12px #0006;transform:rotate(var(--r));animation:fl 5s ease-in-out infinite;animation-delay:var(--d);cursor:pointer;font:inherit;color:inherit;text-align:center}
+@keyframes fl{50%{transform:rotate(var(--r)) translateY(-5px)}}
+.pol .ph{aspect-ratio:1;width:100%}
+.clip{position:absolute;top:-12px;left:50%;width:14px;height:24px;margin-left:-7px;background:linear-gradient(#c9a14a,#8a6a22);border-radius:3px;z-index:2;box-shadow:0 2px 3px #0005}
+.cap{font-style:italic;font-size:.8rem;margin-top:5px;min-height:1.1em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#lb{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;z-index:20;padding:14px}
+#lb.show{display:flex}
+.lbin{position:relative;background:#fffaf0;padding:10px 10px 8px;width:min(92vw,560px);transform:rotate(-1deg);box-shadow:0 10px 40px #000;text-align:center}
+.big{width:100%;aspect-ratio:1;max-height:68dvh}
+#lbx{position:absolute;top:-16px;right:-12px;width:44px;height:44px;border-radius:50%;border:2px solid #3b2412;background:#9b3a3a;color:#fff;font-size:1.1rem;cursor:pointer;z-index:3}
+#lbcap{font-style:italic;margin:8px 0 2px}
+/* proposal */
+.scene{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+.isle{font-size:3rem;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.parch{width:min(94vw,520px);padding:18px 14px 22px;text-align:center}
+.row{display:flex;gap:18px;justify-content:center;align-items:center;margin-top:14px}
+.yes{font-size:1.15rem;transition:transform .3s}
+.slot{display:inline-block;width:130px;height:52px}
+#no{position:fixed;display:none;z-index:9;transition:left .35s cubic-bezier(.3,1.5,.5,1),top .35s cubic-bezier(.3,1.5,.5,1);touch-action:manipulation}
+/* chest */
+.chest{position:relative;width:8em;height:6em;margin:0 auto}
+.chest .bx{position:absolute;bottom:0;width:100%;height:3.4em;background:repeating-linear-gradient(90deg,#8a5a2b 0 1.2em,#6b4220 1.2em 1.3em);border:.2em solid #3b2412;border-radius:.3em}
+.chest .bx i{position:absolute;top:-.5em;left:50%;width:1em;height:1.3em;margin-left:-.5em;background:linear-gradient(#f6d985,#c99a2e);border:.15em solid #3b2412;border-radius:.2em}
+.chest .lid{position:absolute;bottom:3.2em;width:100%;height:2.2em;background:repeating-linear-gradient(90deg,#9a6633 0 1.2em,#6b4220 1.2em 1.3em);border:.2em solid #3b2412;border-radius:2em 2em .2em .2em;transform-origin:0 100%;transition:transform 1s cubic-bezier(.3,1.6,.5,1)}
+.chest .gl{position:absolute;bottom:2.6em;left:5%;width:90%;height:2.4em;background:radial-gradient(ellipse at bottom,#ffe27a,transparent 70%);opacity:0;transition:opacity 1s}
+.chest.open .lid{transform:rotate(-32deg) translateY(-.3em)}
+.chest.open .gl{opacity:1;animation:gw 1.4s ease-in-out infinite}
+@keyframes gw{50%{transform:scale(1.2)}}
+.c1{font-size:14px;animation:bob 3s ease-in-out infinite}
+/* final */
+#p4{background:radial-gradient(ellipse at 50% 70%,#1b4f78,#0a1a33 70%);text-align:center;padding:20px;overflow:hidden}
+#p4 h1{color:#f6d985;text-shadow:0 0 18px #c99a2e99;margin-top:16px}
+#p4 p{color:#fbe9bd;max-width:520px;margin:.4em 0;font-size:1.1rem}
+#p4 .tag{font-style:italic;color:#f3b0b0}
+.c2{font-size:20px}
+#fx{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#fx span{position:absolute;bottom:-40px;opacity:0;animation:rise linear forwards}
+@keyframes rise{10%{opacity:1}to{transform:translateY(-115dvh) rotate(360deg);opacity:0}}
+#nav{position:fixed;left:0;right:0;bottom:0;display:none;justify-content:space-between;padding:12px 14px calc(12px + env(safe-area-inset-bottom));z-index:7}
+</style>
+</head>
+<body>
+<div class="sea"></div>
+<div id="prog">1 / 4</div>
+
+<!-- PAGE 1: SECRET ENTRY -->
+<section class="page on" id="p0">
+  <form id="f" class="pm card" autocomplete="off">
+    <div class="compass"><b>N</b><div class="nw"><div class="nd"></div></div></div>
+    <h1>A Secret Treasure Awaits…</h1>
+    <p>Only the person this treasure belongs to can enter.</p>
+    <input id="code" type="password" placeholder="Passcode" aria-label="Passcode" maxlength="24" autocomplete="off">
+    <button class="btn" type="submit">ENTER ⚓</button>
+    <p id="mb" aria-live="polite"></p>
+    <p id="hint" class="hint"></p>
+    <p style="font-size:.8rem;opacity:.6;margin-top:6px">✕ marks the spot</p>
+  </form>
+  <div class="ship">⛵</div>
+</section>
+
+<!-- PAGE 2: OUR STORY -->
+<section class="page" id="p1">
+  <div class="pm frame">
+    <div class="ribbon">✦ Chapter II ✦</div>
+    <h2 class="st hid">Our Story</h2>
+    <div class="shots" id="shots"></div>
+    <!-- ✏️ YOUR PERSONAL MESSAGE: edit MESSAGE in the CONFIG at the top of the script -->
+    <p id="msg" class="st hid">hiii baby ik i hurted you so much in the past im really really really sholly i really love you so much i used claude to create this but i hope you get happy ❤</p>
+    <div class="stamp st hid">WANTED · FOREVER ❤</div>
+    <div class="tip" id="tip">Press NEXT to unfold the map…</div>
+  </div>
+</section>
+
+<!-- PAGE 3: OUR MEMORIES -->
+<section class="page" id="p2">
+  <h2 class="ttl">Our Memories</h2>
+  <div id="wall" class="pm"></div>
+</section>
+
+<!-- PAGE 4: THE PROPOSAL -->
+<section class="page" id="p3">
+  <div class="scene">
+    <div class="isle">🏝️</div>
+    <div class="pm parch">
+      <h2 id="q">Will you be my forever adventure partner?</h2>
+      <div class="row"><button class="btn red yes" id="yes">YES ❤️</button><span class="slot" id="slot"></span></div>
+    </div>
+    <div class="chest c1"><div class="lid"></div><div class="gl"></div><div class="bx"><i></i></div></div>
+  </div>
+</section>
+
+<!-- FINAL: TREASURE FOUND -->
+<section class="page" id="p4">
+  <div id="fx"></div>
+  <div class="chest c2" id="fchest"><div class="lid"></div><div class="gl"></div><div class="bx"><i></i></div></div>
+  <h1>YOU FOUND THE TREASURE ❤️</h1>
+  <p id="fm">YOUR FINAL MESSAGE HERE</p>
+  <p class="tag" id="ft"></p>
+</section>
+
+<button class="btn red" id="no" type="button">NO 😭</button>
+
+<div id="lb"><div class="lbin"><button id="lbx" aria-label="Close photo">✕</button><div id="lbimg"></div><p id="lbcap"></p></div></div>
+
+<div id="nav"><button class="btn" id="prev" type="button">◀ BACK</button><button class="btn" id="next" type="button">NEXT ▶</button></div>
+
+<script>
+/* ============ ✏️ CONFIG — EDIT EVERYTHING HERE ============ */
+const PASSCODE = "3725";                       // <- change the passcode here
+const HINT = "Hint: it's a date that matters to us 💛";
+const WRONG = [
+  "Arrr! That's not the key, matey… try again! 🏴‍☠️",
+  "Even the kraken is laughing at that one 🐙 One more go!",
+  "Last warning, captain! Think about us… ❤️"
+];
+const STORY_PHOTOS = ["Photo1.JPG", "Photo2.JPG", "Photo3.JPG"];
+const MESSAGE = "hiii baby ik i hurted you so much in the past im really really really sholly i really love you so much i used claude to create this but i hope you get happy ❤";
+const PHOTOS = ["photo1.jpeg","photo2.jpeg","photo3.jpeg","photo4.jpeg","photo5.jpeg","photo6.jpeg","photo7.jpeg","photo8.jpeg","photo9.jpeg","photo10.jpeg"];
+const CAPTIONS = ["Where it all feels a lil more spcl","just us,being us","a moment i'd happily relive"," you nd me forever","my home","most memorable day ","mera bhondhu ","banglore days🌚","us in our world ","love you forever muahhh"];
+const QUESTION = "Will you be my forever adventure partner?";
+const NO_TEXTS = ["Are you sure?","Think again 😭","Wrong choice!","The treasure says YES!"];
+const FINAL_MESSAGE = "happy boyfrien day babyyyy i wish that this boyfrien day will turn into husband day soon muahhhhhhh";
+const FINAL_TAGLINE = "One adventure. A thousand memories. And hopefully many more.";
+/* ========================================================== */
+
+const $ = s => document.querySelector(s);
+const pages = [...document.querySelectorAll('.page')];
+const prog = $('#prog'), nav = $('#nav'), no = $('#no'), yes = $('#yes'), code = $('#code'), f = $('#f');
+let cur = 0, step = 0, tries = 0, nTries = 0, moved = false, lastCall = 0, px = -999, py = -999;
+
+function ph(src, cls) {
+  const d = document.createElement('div'); d.className = 'ph ' + (cls || '');
+  const i = new Image(); i.alt = ''; i.onerror = () => i.remove(); i.src = src; d.appendChild(i); return d;
+}
+
+/* --- build content --- */
+$('#msg').textContent = MESSAGE; $('#q').textContent = QUESTION;
+$('#fm').textContent = FINAL_MESSAGE; $('#ft').textContent = FINAL_TAGLINE;
+const rots = [-4, 3, -2];
+STORY_PHOTOS.forEach((s, i) => {
+  const d = document.createElement('div'); d.className = 'shot st hid'; d.style.setProperty('--r', rots[i % 3] + 'deg');
+  d.appendChild(ph(s)); $('#shots').appendChild(d);
+});
+const STEPS = [...document.querySelectorAll('#p1 .st')];
+
+const lb = $('#lb');
+PHOTOS.forEach((s, i) => {
+  const c = document.createElement('div'); c.className = 'cell';
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'pol';
+  b.style.setProperty('--r', ((i * 7 % 9) - 4) + 'deg'); b.style.setProperty('--d', (i * -0.7) + 's');
+  b.setAttribute('aria-label', 'Open photo: ' + (CAPTIONS[i] || ''));
+  b.innerHTML = '<span class="clip"></span>'; b.appendChild(ph(s));
+  const cp = document.createElement('div'); cp.className = 'cap'; cp.textContent = CAPTIONS[i] || ''; b.appendChild(cp);
+  b.onclick = () => { $('#lbimg').replaceChildren(ph(s, 'big')); $('#lbcap').textContent = CAPTIONS[i] || ''; lb.classList.add('show'); };
+  c.appendChild(b); $('#wall').appendChild(c);
+});
+const closeLb = () => lb.classList.remove('show');
+lb.onclick = e => { if (e.target === lb) closeLb(); };
+$('#lbx').onclick = closeLb;
+
+/* --- navigation --- */
+function updNav() {
+  $('#prev').style.visibility = (cur === 1 && step === 0) ? 'hidden' : 'visible';
+  $('#next').style.visibility = cur === 3 ? 'hidden' : 'visible';
+  $('#next').textContent = (cur === 1 && step === STEPS.length) ? 'CONTINUE ▶' : 'NEXT ▶';
+}
+function go(n) {
+  cur = n; pages.forEach((p, i) => p.classList.toggle('on', i === n));
+  prog.style.display = n < 4 ? 'block' : 'none'; prog.textContent = (n + 1) + ' / 4';
+  nav.style.display = (n > 0 && n < 4) ? 'flex' : 'none';
+  no.style.display = n === 3 ? 'block' : 'none';
+  if (n === 3 && !moved) setTimeout(placeNo, 700);
+  if (n === 4) celebrate();
+  updNav();
+}
+function next() {
+  if (cur === 1 && step < STEPS.length) { STEPS[step++].classList.remove('hid'); $('#tip').style.display = 'none'; updNav(); }
+  else if (cur >= 1 && cur < 3) go(cur + 1);
+}
+function prev() {
+  if (cur === 1) { if (step > 0) { STEPS[--step].classList.add('hid'); if (!step) $('#tip').style.display = 'block'; updNav(); } }
+  else if (cur > 1 && cur < 4) go(cur - 1);
+}
+$('#next').onclick = next; $('#prev').onclick = prev;
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLb();
+  else if (cur > 0 && cur < 4 && !lb.classList.contains('show')) {
+    if (e.key === 'ArrowRight') next(); else if (e.key === 'ArrowLeft') prev();
+  }
+});
+
+/* --- page 1: passcode --- */
+f.addEventListener('submit', e => {
+  e.preventDefault();
+  if (code.value.trim() === PASSCODE) { code.value = ''; $('#mb').textContent = ''; go(1); return; }
+  tries++; f.classList.remove('bad'); void f.offsetWidth; f.classList.add('bad');
+  setTimeout(() => {
+    code.value = ''; $('#mb').textContent = WRONG[(tries - 1) % 3];
+    if (tries >= 3) $('#hint').textContent = HINT;
+    code.focus();
+  }, 480);
+});
+f.addEventListener('animationend', e => { if (e.target === f) f.classList.remove('bad'); });
+setTimeout(() => code.focus(), 300);
+
+/* --- page 4: shy NO button --- */
+function placeNo() {
+  if (moved) return;
+  const r = $('#slot').getBoundingClientRect(); no.style.left = r.left + 'px'; no.style.top = r.top + 'px';
+}
+function jump() {
+  const now = Date.now(); if (now - lastCall < 250) return; lastCall = now;
+  nTries++;
+  const w = innerWidth, h = innerHeight, r = no.getBoundingClientRect(), y = yes.getBoundingClientRect();
+  let x = 0, t = 0;
+  for (let i = 0; i < 60; i++) {
+    x = 8 + Math.random() * Math.max(0, w - r.width - 16);
+    t = 56 + Math.random() * Math.max(0, h - r.height - 56 - 84);
+    const hitYes = x < y.right + 20 && x + r.width > y.left - 20 && t < y.bottom + 20 && t + r.height > y.top - 20;
+    const nearOld = Math.hypot(x - r.left, t - r.top) < 90;
+    const nearPtr = px > -900 && Math.hypot(x + r.width / 2 - px, t + r.height / 2 - py) < 130;
+    if (!hitYes && !nearOld && !nearPtr) break;
+  }
+  moved = true; no.style.left = x + 'px'; no.style.top = t + 'px';
+  if (nTries >= 2) no.textContent = NO_TEXTS[Math.min(nTries - 2, NO_TEXTS.length - 1)];
+  yes.style.transform = 'scale(' + Math.min(1.45, 1 + nTries * 0.07) + ')';
+}
+let stamp = 0;
+no.addEventListener('pointerdown', e => { e.preventDefault(); stamp = Date.now(); lastCall = 0; jump(); });
+no.addEventListener('click', e => { e.preventDefault(); if (Date.now() - stamp > 500) { lastCall = 0; jump(); } });
+document.addEventListener('pointermove', e => {
+  px = e.clientX; py = e.clientY;
+  if (cur !== 3 || e.pointerType === 'touch') return;
+  const r = no.getBoundingClientRect();
+  if (Math.hypot(px - (r.left + r.width / 2), py - (r.top + r.height / 2)) < r.width / 2 + 45) jump();
+});
+window.addEventListener('resize', () => {
+  if (cur !== 3) return;
+  if (!moved) placeNo();
+  else { const r = no.getBoundingClientRect(); no.style.left = Math.max(8, Math.min(r.left, innerWidth - r.width - 8)) + 'px'; no.style.top = Math.max(56, Math.min(r.top, innerHeight - r.height - 84)) + 'px'; }
+});
+yes.onclick = () => go(4);
+
+/* --- final celebration --- */
+let fxOn = false;
+function spawn() {
+  const s = document.createElement('span'), cols = ['#f6d985', '#e86a6a', '#ffffff', '#7fc4e8', '#f3b0b0'];
+  s.textContent = ['❤', '💛', '✦', '★', '✨', '❤️'][Math.random() * 6 | 0];
+  s.style.left = Math.random() * 100 + '%'; s.style.fontSize = 14 + Math.random() * 22 + 'px';
+  s.style.color = cols[Math.random() * cols.length | 0]; s.style.animationDuration = 4 + Math.random() * 4 + 's';
+  $('#fx').appendChild(s); setTimeout(() => s.remove(), 8500);
+}
+function celebrate() {
+  setTimeout(() => $('#fchest').classList.add('open'), 500);
+  for (let i = 0; i < 30; i++) setTimeout(spawn, i * 80);
+  if (!fxOn) { fxOn = true; setInterval(spawn, 350); }
+}
+go(0);
+</script>
+</body>
+</html>
